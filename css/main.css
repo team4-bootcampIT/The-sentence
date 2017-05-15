@@ -365,3 +365,25 @@ body {
     border: 1px solid red;
 }
 
+#poruke{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    text-align:center;
+    color:#E52D2D;
+    background-color:#FFC5C5;
+    border-radius:5px;
+    
+ 
+}
+#poruke1{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    text-align:center;
+    color:#006400;
+    background-color:#90EE90;
+    border-radius:5px;
+    
+ 
+}
