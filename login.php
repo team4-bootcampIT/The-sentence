@@ -61,15 +61,25 @@
                   </div>
                   <input type="password" class="input-login" name="password" placeholder="Password">
               </div>
-  <!--
+
+
+
               <div class="remember-container">
-                  <label class="switch">
-                    <input type="checkbox">
+                  <label class="switch">  -->
+                    <input type="checkbox" id="remember-me-checkbox">
                     <div class="slider round"></div>
                   </label>
-                  <span class="remember-login-text">Remember login?</span>
+                  <span class="remember-login-text">Remember me?</span>
               </div>
-  -->
+
+              <div class="remember-container">
+                  <label class="switch">
+                    <input type="checkbox" id="show-hide-checkbox">
+                    <div class="slider round"></div>
+                  </label>
+                  <span class="remember-login-text">Show password</span>
+              </div>
+
               <button type="submit" id="submit-button">Login</button>
           </form>
           <?php
