@@ -23,6 +23,7 @@ main {
 }
 
 
+/* ------------------------------------------------ NAV ------------------------------------------------ */
 
 #menuIcon {
     display: inline-block;
@@ -99,12 +100,36 @@ main {
     background-color: #014d83;
 }
 
-#main-nav .nav-login-container {
+/* ---------------------------- NAV LOGIN -------------------- */
+
+
+.nav-login-container {
     position: absolute;
     top: 0;
     right: 0;
     height:60px;
-    padding: 12px;
+    max-width: 240px;
+    padding: 12px;  */
+}
+
+.nav-user-wrapper {
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  vertical-align: center;
+  margin-right: 6px;
+}
+
+
+#nav-account {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#nav-account i {
+  padding-left: 5px;
+  margin-right: 5px;
 }
 
 #main-nav .nav-login-container #nav-login:hover {
@@ -123,14 +148,13 @@ main {
     border: none;
     color: #fff;
     padding: 6px 12px;
-    margin-right: 6px;   
+    margin-right: 6px;
     border-radius: 5px;
     font-size: 16px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .nav-button:hover {
-
     background: #0c7cd5;
 }
 
@@ -151,8 +175,8 @@ main {
     display: inline-block;
     float: left;
 
-    height: 300px;    
-    padding: 10px;  
+    height: 300px;
+    padding: 10px;
     margin: 10px;
 
     overflow: hidden;
@@ -224,7 +248,7 @@ main {
 
 
         width: 250px;
-        height: 300px;      
+        height: 300px;
         margin: 10px;
         padding: 10px;
     }
@@ -241,12 +265,13 @@ main {
 @media screen and (min-width: 810px) {
     .main-article-container {
         width: 810px;
-    }    
+    }
 }
 
 
 
-/* --- LOGIN --- */
+
+/* ------------------------------------------------ LOGIN ------------------------------------------------ */
 
 #login-container {
     max-width: 350px;
@@ -297,17 +322,15 @@ main {
 
 /*
 .input-login-wrapper {
-    
+
     position: absolute;
     top: 0;
     left: 42px;
-    
+
     width: 100%;
 }
 */
 .input-login {
-    
-    
     width: 100%;
     height: 42px;
     margin-bottom: 15px;
@@ -342,9 +365,25 @@ main {
     position: relative;
     height: 20px;
     margin-top: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
+.remember-container-show-hide {
+  float: right;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.left-remember-login-text {
+    font-size: 14px;
+    color: #888;
+}
+
+.right-remember-login-text {
+    font-size: 14px;
+    color: #888;
+
+}
 
 .remember-login-text {
     position: absolute;
@@ -352,9 +391,7 @@ main {
     left: 48px;
     font-size: 14px;
     color: #888;
-
 }
-
 
 
 /* ------ slider button for remebering password ------ */
@@ -396,7 +433,7 @@ main {
 }
 
 .switch input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #014d83;
 }
 
 .switch input:focus + .slider {
@@ -436,13 +473,13 @@ main {
 
 #submit-button:hover {
 
-    background: #0c7cd5;  
+    background: #0c7cd5;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 #submit-button:active {
     background: #0960a5;
-    
+
 }
 /* --- LOGIN end --- */
 
@@ -450,15 +487,9 @@ main {
 
 
 
-
-
-
-
-
-
+/*
 
 
 .bordery {
     border: 1px solid red;
 }
-
