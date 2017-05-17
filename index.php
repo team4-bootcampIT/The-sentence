@@ -1,43 +1,12 @@
 <?php
-
-include 'header.php';
-
+    include 'header.php';
 ?>
 
-<body>
-    <nav id="main-nav">
-        <div id="nav-wrapper">
-            <div id="menuIcon">
-                <a> <!-- Menu icon made of three divs -->
-                    <div class="menuIconLine"></div>
-                    <div class="menuIconLine"></div>
-                    <div class="menuIconLine"></div>
-                </a>
-            </div>
+<?php
+    include 'nav.php';
+?>
 
-            <ul id="list-nav">
-                <li><a class="nav-link" href="/index.php">Home</a></li>
-                <li><a class="nav-link" href="#">About</a></li>
-                <li><a class="nav-link" href="#">Contact</a></li>
-            </ul>
-                <div class="nav-login-container">
 
-                    <?php
-                    if(isset($_SESSION['user'])){
-                           echo $_SESSION['user'] ;
-                             echo"  <a href='change.php'><button type='button' class='nav-button' >Change password</button></a>
-                                    <a href='include/logout.include.php'><button type='button' class='nav-button'>Logout</button></a>";
-
-                          }
-                          else{
-                                  echo"  <a href='login.php'><button type='button' class='nav-button' >Login</button></a>
-                                    <a href='register.php'><button type='button' class='nav-button'>Register</button></a>";
-                                }
-                        ?>
-
-            </div>
-        </div>
-    </nav>
 
     <main>
         <div class="main-article-container">
@@ -65,7 +34,7 @@ include 'header.php';
                 <h3>Retro kuće</h3>
                 <p>Quo id quis iisque dolorem. His laoreet vituperatoribus et, quo doming salutandi at, ferri efficiantur nam et. Vel impedit civibus copiosae ei, quo ut quem assueverit. Ea suas illum atqui mei, etiam praesent iudicabit sea at. Expetenda molestiae disputando duo no, sit ea munere meliore.</p>
             </div>
-        
+
             <div class="article-container">
                 <div class="article-image-container">
                     <img class="article-image" src="https://unsplash.it/460/280?image=1043">
@@ -88,9 +57,9 @@ include 'header.php';
                     <h4>ekologija</h4>
                 </div>
                 <h3>Ekološka katastrofa kod Meksika</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consectetur diam ac ipsum ultrices euismod. 
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consectetur diam ac ipsum ultrices euismod.
     This keyword value indicates to display an ellipsis ('…', U+2026 Horizontal Ellipsis) to represent clipped text. The ellipsis is displayed inside the content area, decreasing the amount of text displayed. If there is not enough space to display the ellipsis, it is clipped.</p>
-            </div>     
+            </div>
 
             <div class="article-container">
                 <div class="article-image-container">
@@ -140,11 +109,11 @@ include 'header.php';
                 <div class="icon-wrapper">
                     <i class="fa fa-user fa-lg" aria-hidden="true"></i>
                 </div>
-                
-                    <input type="text" class="input-login" name="username" placeholder="Username" autofocus>    
-                
+
+                    <input type="text" class="input-login" name="username" placeholder="Username" autofocus>
+
             </div>
-            
+
             <div class="input-wrapper">
                 <div class="icon-wrapper">
                     <i class="fa fa-lock fa-lg" aria-hidden="true"></i>

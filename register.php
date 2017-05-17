@@ -1,45 +1,17 @@
 <?php
-
-/* include 'connect.php';   */
-include 'header.php';
-
-
+    include 'header.php';
 ?>
 
-<body>
-    <nav id="main-nav">
-        <div id="nav-wrapper">
-            <div id="menuIcon">
-                <a> <!-- Menu icon made of three divs -->
-                    <div class="menuIconLine"></div>
-                    <div class="menuIconLine"></div>
-                    <div class="menuIconLine"></div>
-                </a>
-            </div>
-          <ul id="list-nav">
-              <li><a class="nav-link" href="index.php">Home</a></li>
-              <li><a class="nav-link" href="#">About</a></li>
-              <li><a class="nav-link" href="#">Contact</a></li>
-          </ul>
-              <div class="nav-login-container">
-
-                  <a href="login.php"><button type="button" class="nav-button" >Login</button></a>
-                  <a href="register.php"><button type="button" class="nav-button">Register</button></a>
-              </div>
-        </div>
-    </nav>
-
-
-
-
-
+<?php
+    include 'nav.php';
+?>
 
 
     <main>
       <div id="register-container">
           <form action="include/signup.include.php" method="POST" id="form-container">
-         
-      <div id="poruke"> 
+
+      <div id="poruke">
        <?php
 
       //<---- dodao sam novi <div> id poruke, u kojem ce se prema kodu errora prikazivati text errora (trebat ce dotjerat) ---->
@@ -66,7 +38,7 @@ include 'header.php';
           if (strpos($url,'error=exemail') !== false){
         echo 'Email already registered!';
         }
-       
+
       //<---------------------------------------------------------------------------------------------------------------------->
         ?>
       </div>
@@ -74,32 +46,32 @@ include 'header.php';
                   <div class="icon-wrapper">
                       <i class="fa fa-user fa-lg" aria-hidden="true"></i>
                   </div>
-                      <input type="text" class="input-login" name="username" placeholder="Username" autofocus>    
+                      <input type="text" class="input-login" name="username" placeholder="Username" autofocus>
               </div>
 
               <div class="input-wrapper">
                   <div class="icon-wrapper">
                       <i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
                   </div>
-                  
-                      <input type="email" class="input-login" name="email" placeholder="Email" autofocus>    
-                  
+
+                      <input type="email" class="input-login" name="email" placeholder="Email" autofocus>
+
               </div>
-            
+
               <div class="input-wrapper">
                   <div class="icon-wrapper">
                       <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
                   </div>
                   <input type="password" class="input-login" name="password" placeholder="Password">
               </div>
-            
+
               <div class="input-wrapper">
                   <div class="icon-wrapper">
                       <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
                   </div>
                   <input type="password" class="input-login" name="passworda" placeholder="Repeat password">
               </div>
-   <!-- 
+   <!--
               <div class="remember-container">
                   <label class="switch">
                     <input type="checkbox">

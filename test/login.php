@@ -12,7 +12,7 @@ $password = $_POST['password'];
 echo $password;*/
 
 //query username i password u bazi
-$sql = "SELECT * FROM login WHERE username='$username' and password='$password'";
+$sql = "SELECT * FROM prijava WHERE username='$username' and password='$password'";
 
 //mysqli_query(connection,query,resultmode)-  function performs a query against the database.
 $result = mysqli_query($conn, $sql);

@@ -1,38 +1,15 @@
 <?php
+    include 'header.php';
+?>
 
-include "header.php";
- ?>
-
-
-
-<body>
-    <nav id="main-nav">
-        <ul>
-            <li><a class="nav-link" href="index.php">Home</a></li>
-            <li><a class="nav-link" href="#">About</a></li>
-            <li><a class="nav-link" href="#">Contact</a></li>
-            <li class="nav-login-container bordery">
 <?php
-if(isset($_SESSION['user'])){
-       echo $_SESSION['user'] ;
-         echo"  <a href='change.php'><button type='button' class='nav-button bordery' >Change password</button></a>
-                <a href='include/logout.include.php'><button type='button' class='nav-button bordery'>Logout</button></a>";
-
-      }
-      else{
-              echo"  <a href='login.php'><button type='button' class='nav-button bordery' >Login</button></a>
-                <a href='register.php'><button type='button' class='nav-button bordery'>Register</button></a>";
-            }
-    ?>
-            </li>
-        </ul>
-    </nav>
-
+    include 'nav.php';
+?>
 
 
 
     <div id="login-container">
-    <div id="poruke1"> 
+    <div id="poruke1">
  <?php
 
 //<---- dodao sam novi <div> id poruke1, u kojem ce se prema kodu success stvari prikazivati text (trebat ce dotjerat) ---->
@@ -42,11 +19,11 @@ if(isset($_SESSION['user'])){
   echo 'Your password is changed!';
   }
 
- 
+
 //<---------------------------------------------------------------------------------------------------------------------->
   ?>
   </div>
-    <div id="poruke"> 
+    <div id="poruke">
  <?php
 
 //<---- dodao sam novi <div> id poruke, u kojem ce se prema kodu errora prikazivati text errora (trebat ce dotjerat) ---->
@@ -58,15 +35,15 @@ if(isset($_SESSION['user'])){
     if (strpos($url,'error=missmatch2') !== false){
   echo 'New password missmatch!';
   }
-   
- 
+
+
 //<---------------------------------------------------------------------------------------------------------------------->
   ?>
   </div>
         <form action="include/change.include.php" method="POST" id="form-container">
 
 
-            
+
             <div class="input-wrapper">
                 <div class="icon-wrapper">
                     <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
@@ -98,7 +75,7 @@ if(isset($_SESSION['user'])){
 -->
             <button type="submit" id="submit-button">Change password</button>
         </form>
-     
+
     </div>
 
 </body>
