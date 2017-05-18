@@ -1,106 +1,88 @@
 <?php
     include 'header.php';
-?>
-
-<?php
     include 'nav.php';
 ?>
 
 
-    <main>
-      <div id="login-container">
+<main>
+    <div id="login-container">
         <div id="poruke1">
-         <?php
+            <?php
 
 
-        //<---- dodao sam novi <div> id poruke1, u kojem ce se prema kodu success stvari prikazivati text (trebat ce dotjerat) ---->
-          $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+            //<---- dodao sam novi <div> id poruke1, u kojem ce se prema kodu success stvari prikazivati text (trebat ce dotjerat) ---->
+              $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
-          if (strpos($url,'reg=success') !== false){
-          echo 'Registration successful!<br>Log in!!';
-          }
+              if (strpos($url,'reg=success') !== false){
+              echo 'Registration successful!<br>Log in!!';
+              }
 
 
-        //<---------------------------------------------------------------------------------------------------------------------->
+            //<---------------------------------------------------------------------------------------------------------------------->
           ?>
         </div>
 
         <div id="poruke">
             <?php
-
-          //<---- dodao sam novi <div> id poruke, u kojem ce se prema kodu errora prikazivati text errora (trebat ce dotjerat) ---->
+            //<---- dodao sam novi <div> id poruke, u kojem ce se prema kodu errora prikazivati text errora (trebat ce dotjerat) ---->
             $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
             if (strpos($url,'error=missmatch') !== false){
             echo 'Username or password incorrect!';
             }
-              if (strpos($url,'error=notlogged') !== false){
+
+            if (strpos($url,'error=notlogged') !== false){
             echo 'Log in for user area!';
             }
-
-
-          //<---------------------------------------------------------------------------------------------------------------------->
+            //<---------------------------------------------------------------------------------------------------------------------->
             ?>
         </div>
-          <form action="include/login.include.php" method="POST" id="form-container">
 
-              <div class="input-wrapper">
-                  <span class="icon-wrapper">
+        <form action="include/login.include.php" method="POST" id="form-container">
 
-                      <i class="fa fa-user fa-lg" aria-hidden="true"></i>
+            <div class="input-wrapper">
+                <span class="icon-wrapper">
+                    <i class="fa fa-user fa-lg" aria-hidden="true"></i>
+                </span>
+                <input type="text" class="input-login" name="loguser" placeholder="Username or email" autofocus>
+            </div>
 
-                  </span>
+            <div class="input-wrapper">
+                <div class="icon-wrapper">
+                    <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
+                </div>
+                <input type="password" class="input-login" name="password" placeholder="Password">
+            </div>
 
-                  <input type="text" class="input-login" name="loguser" placeholder="Username or email" autofocus>
-
-              </div>
-
-              <div class="input-wrapper">
-                  <div class="icon-wrapper">
-                      <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
-                  </div>
-                  <input type="password" class="input-login" name="password" placeholder="Password">
-              </div>
-
-
-
-
-              <div class="remember-container remember-container-show-hide bordery">
-                  <span class="left-remember-login-text bordery">***</span>
-                  <label class="switch">
+            <div class="remember-container remember-container-show-hide bordery">
+                <span class="left-remember-login-text bordery">***</span>
+                <label class="switch">
                     <input type="checkbox" id="show-hide-checkbox">
                     <div class="slider round"></div>
-                  </label>
-                  <span class="right-remember-login-text bordery">ABC</span>
-              </div>
+                </label>
+                <span class="right-remember-login-text bordery">ABC</span>
+            </div>
 
+            <button type="submit" id="submit-button">Login</button>
 
-              <button type="submit" id="submit-button">Login</button>
+            <div class="remember-container bordery">
+                <label class="switch">  -->
+                    <input type="checkbox" id="remember-me-checkbox">
+                    <div class="slider round"></div>
+                </label>
+                <span class="remember-login-text bordery">Remember me?</span>
+            </div>
 
+        </form>
 
-              <div class="remember-container">
-                  <label class="switch">  -->
-                      <input type="checkbox" id="remember-me-checkbox">
-                      <div class="slider round"></div>
-                  </label>
-                  <span class="remember-login-text">Remember me?</span>
-              </div>
+        <?php
+            if(isset($_SESSION['user'])) {
+              echo $_SESSION['user'] ;
+            }
+        ?>
+    </div>
+</main>
 
-
-          </form>
-          <?php
-
-        if(isset($_SESSION['user'])){
-          echo $_SESSION['user'] ;
-
-
-        }
-
-         ?>
-      </div>
-  </main>
-
-    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-    <script src="js/script.js"></script>
-</body>
-</html>
+<?php
+    include 'footer.php';
+?>

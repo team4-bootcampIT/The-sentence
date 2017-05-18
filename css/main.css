@@ -27,7 +27,7 @@ main {
 
 #menuIcon {
     display: inline-block;
-    /* Menu icon is in the top right corner */
+    /* Menu icon is in the top left corner */
     position: absolute;
     top: 0;
     left: 0;
@@ -345,7 +345,7 @@ main {
 
 }
 
-
+/* boja pozadinskog / placeholder teksta u input poljima */
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: #999;
 }
@@ -381,15 +381,17 @@ main {
 
 .right-remember-login-text {
     font-size: 14px;
+    line-height: 20px;
     color: #888;
 
 }
 
 .remember-login-text {
     position: absolute;
-    top: 2px;
+    top: -1px;
     left: 48px;
     font-size: 14px;
+    line-height: 20px;
     color: #888;
 }
 
@@ -437,7 +439,7 @@ main {
 }
 
 .switch input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #014d83;
 }
 
 .switch input:checked + .slider:before {
@@ -485,9 +487,9 @@ main {
 
 
 
-
-
 /*
+
+
 
 
 .bordery {

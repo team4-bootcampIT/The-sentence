@@ -1,6 +1,6 @@
 <?php
     session_start();
- ?>
+?>
 
 <!DOCTYPE html>
 <html>
@@ -13,7 +13,6 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans|Open+Sans:300,400" rel="stylesheet">
     <script src="https://use.fontawesome.com/f24e56ad22.js"></script>
-
 </head>
 
 <body>
