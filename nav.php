@@ -17,7 +17,7 @@
             <li><a class="nav-link" href="#">Contact</a></li>
         </ul>
 
-        <div class="nav-login-container bordery">
+        <div class="nav-login-container">
 
            <?php
            /* ako si logiran, onda se prikazuje sljedeće: (ovo je originalni kod, ispod je novi, modificiran)
@@ -30,18 +30,26 @@
 
 
 
+
+
+
               /* ako si logiran, onda se prikazuje sljedeće: */
                  if(isset($_SESSION['user'])){
-                    echo " <span class='nav-user-wrapper bordery'>
-                <a id='nav-account' class='bordery' href='account.php'>"
-                  . $_SESSION['user'] .
-                " <i class='fa fa-user-circle fa-lg' aria-hidden='true'></i>
-                </a>
-            </span>";
+                     echo "<div class='nav-user-wrapper borderyx'>
+                                <span class='nav-account-username bordery'>
+                                    <a class='nav-account' href='account.php'>"
+                                        . $_SESSION['user'] .
+                                    "</a>
+                                </span>
 
+                                <span class='nav-account-icon-wrapper bordery'>
+                                    <a class='nav-account borderyx' href='account.php'>
+                                        <i class='fa fa-user-circle fa-lg nav-account-icon' aria-hidden='true'></i>
+                                    </a>
+                                </span>
+                            </div>";
                  }
 
-                  /* vedran: <span style='color:white'>Hello, ".$_SESSION['user'] ;" </span> */
 
 
 
