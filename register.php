@@ -42,28 +42,28 @@
                 <div class="icon-wrapper">
                     <i class="fa fa-user fa-lg" aria-hidden="true"></i>
                 </div>
-                <input type="text" class="input-login" name="username" placeholder="Username" autofocus>
+                <input type="text" class="input-login" name="username" placeholder="Username" pattern=".{6,32}" title="Username has to be between 6 and 20 characters long" required autofocus>
             </div>
 
             <div class="input-wrapper">
                 <div class="icon-wrapper">
                     <i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
                 </div>
-                <input type="email" class="input-login" name="email" placeholder="Email" autofocus>
+                <input type="email" class="input-login" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  title="Write your real email" required>
             </div>
 
             <div class="input-wrapper">
                 <div class="icon-wrapper">
                     <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
                 </div>
-                <input type="password" class="input-login" name="password" placeholder="Password">
+                <input type="password" class="input-login" name="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{12,64}" title="Password has to be at least 12 characters long" required>
             </div>
 
             <div class="input-wrapper">
                 <div class="icon-wrapper">
                     <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
                 </div>
-                <input type="password" class="input-login" name="passworda" placeholder="Repeat password">
+                <input type="password" class="input-login" name="passworda" placeholder="Repeat password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{12,64}" title="Password has to be at least 12 characters long" required>
             </div>
    <!--
             <div class="remember-container">

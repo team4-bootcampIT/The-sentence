@@ -48,12 +48,7 @@
             </div>
 
 
-<!-- ------------------------------------------------ -->
-<!-- ovo je uključeno kako bi se mogao prikazivati password
-<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-<script src="path/to/hideShowPassword.min.js"></script>-->
-<!-- ------------------------------------------------ -->
-
+<!-- password show hide s okom -->
             <div class="input-wrapper">
                 <div class="icon-wrapper">
                     <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
@@ -64,9 +59,12 @@
                     <i id="ikonica" class="fa fa-eye fa-lg" aria-hidden="true"></i>
                 </span>
             </div>
+<!-- password kraj -->
 
 
-<!-- ------------------------------------------------ -->
+
+
+
             <button type="submit" id="submit-button">Login</button>
 
             <div class="remember-container bordery">

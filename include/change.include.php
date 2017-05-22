@@ -4,7 +4,7 @@ session_start();
 //dodavanje .php dokumenta za spajanje s bazom
 include '../connect.php';
 //prikupljanje podataka iz forme
-if(isset($_SESSION['user'])){
+if(isset($_SESSION['user'])) {
       $user = $_SESSION['user'] ;
        $email = $_SESSION['user'] ;
 
@@ -22,7 +22,7 @@ $result = mysqli_query($conn, $sql);
 $row=mysqli_fetch_assoc($result);
 //hesirana lozinka
 $hpwd = $row['password'];
-//true or false 
+//true or false
 $hash = password_verify($password,$hpwd);
 //<---- provjeravanje stare lozinke---->
 if($hash == 0){
