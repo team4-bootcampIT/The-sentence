@@ -14,8 +14,6 @@ infosit header nav tamnija plava - za hover: #014d83;
 }
 
 body {
-    background-image: url("bg2.jpg");
-
 }
 
 main {
@@ -100,40 +98,58 @@ main {
     background-color: #014d83;
 }
 
-/* ---------------------------- NAV LOGIN -------------------- */
+
+
+
+/* ---------------------------- NAV LOGIN --------------------
+div.nav-login-container
+    div.nav-user-wrapper
+        a.nav-account
+            span.nav-account-username
+        span.nav-account-icon-wrapper
+            i.nav-account-icon
+*/
 
 
 .nav-login-container {
     position: absolute;
     top: 0;
     right: 0;
-    height:60px;
+    height: 60px;
     max-width: 240px;
-    padding: 12px;  */
+    padding: 12px;
 }
 
 .nav-user-wrapper {
-  display: inline-block;
-  height: 36px;
-  line-height: 36px;
-  vertical-align: center;
-  margin-right: 6px;
+    position: relative;
+    display: inline-block;
+    height: 36px;
+    width: 216px;
+    line-height: 36px;
+    vertical-align: center;
 }
 
 
-#nav-account {
-  color: #fff;
-  font-weight: bold;
-  text-decoration: none;
+/* username i ikonica */
+.nav-account {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
 }
 
-#nav-account i {
-  padding-left: 5px;
-  margin-right: 5px;
+.nav-account-username {
+    position: absolute;
+    top: 0;
+    right: 32px;
 }
 
-#main-nav .nav-login-container #nav-login:hover {
-    background-color: #2196F3;
+.nav-account-icon-wrapper {
+    position: absolute;
+    right: 4px;
+    height: 36px;
+}
+
+.nav-account-icon {
 }
 
 /* --- NAVIGACIJA end --- */
@@ -320,6 +336,24 @@ main {
     vertical-align: center;
 }
 
+.show-hide-eye {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 42px;
+    height: 42px;
+    color: #0161a3;
+    background: #fff;
+    line-height: 38px;
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid #fff;
+}
+
+.show-hide-eye:hover {
+    border: 2px solid #0161a3;
+}
+
 /*
 .input-login-wrapper {
 
@@ -368,23 +402,6 @@ main {
     margin-bottom: 5px;
 }
 
-.remember-container-show-hide {
-  float: right;
-  margin-top: -10px;
-  margin-bottom: 10px;
-}
-
-.left-remember-login-text {
-    font-size: 14px;
-    color: #888;
-}
-
-.right-remember-login-text {
-    font-size: 14px;
-    line-height: 20px;
-    color: #888;
-
-}
 
 .remember-login-text {
     position: absolute;
@@ -487,11 +504,16 @@ main {
 
 
 
+
+
 /*
 
 
 
-
 .bordery {
-    border: 1px solid red;
+    border: 1px solid blue;
+}
+
+.borderyx {
+    border: 1px solid blue;
 }

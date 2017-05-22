@@ -44,25 +44,29 @@
                 <span class="icon-wrapper">
                     <i class="fa fa-user fa-lg" aria-hidden="true"></i>
                 </span>
-                <input type="text" class="input-login" name="loguser" placeholder="Username or email" autofocus>
+                <input type="text" class="input-login" name="loguser" placeholder="Username or email" pattern=".{6,20}" title="Username has to be between 6 and 20 characters long" required autofocus>
             </div>
+
+
+<!-- ------------------------------------------------ -->
+<!-- ovo je uključeno kako bi se mogao prikazivati password
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="path/to/hideShowPassword.min.js"></script>-->
+<!-- ------------------------------------------------ -->
 
             <div class="input-wrapper">
                 <div class="icon-wrapper">
                     <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
                 </div>
-                <input type="password" class="input-login" name="password" placeholder="Password">
+                <input type="password"  class="input-login" id="id-password" name="password" placeholder="Password" pattern=".{12,64}" title="Password has to be at least 12 characters long" required>
+
+                <span id="show-hide-checkbox" class="show-hide-eye" onclick="eyeOfTheTiger()">
+                    <i id="ikonica" class="fa fa-eye fa-lg" aria-hidden="true"></i>
+                </span>
             </div>
 
-            <div class="remember-container remember-container-show-hide bordery">
-                <span class="left-remember-login-text bordery">***</span>
-                <label class="switch">
-                    <input type="checkbox" id="show-hide-checkbox">
-                    <div class="slider round"></div>
-                </label>
-                <span class="right-remember-login-text bordery">ABC</span>
-            </div>
 
+<!-- ------------------------------------------------ -->
             <button type="submit" id="submit-button">Login</button>
 
             <div class="remember-container bordery">
