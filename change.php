@@ -11,7 +11,7 @@ include "nav.php";
 
 
     <div id="login-container">
-    <div id="poruke1"> 
+    <div id="poruke1">
  <?php
 
 //<---- dodao sam novi <div> id poruke1, u kojem ce se prema kodu success stvari prikazivati text (trebat ce dotjerat) ---->
@@ -21,11 +21,11 @@ include "nav.php";
   echo 'Your password is changed!';
   }
 
- 
+
 //<---------------------------------------------------------------------------------------------------------------------->
   ?>
   </div>
-    <div id="poruke"> 
+    <div id="poruke">
  <?php
 
 //<---- dodao sam novi <div> id poruke, u kojem ce se prema kodu errora prikazivati text errora (trebat ce dotjerat) ---->
@@ -37,15 +37,15 @@ include "nav.php";
     if (strpos($url,'error=missmatch2') !== false){
   echo 'New password missmatch!';
   }
-   
- 
+
+
 //<---------------------------------------------------------------------------------------------------------------------->
   ?>
   </div>
         <form action="include/change.include.php" method="POST" id="form-container">
 
 
-            
+
             <div class="input-wrapper">
                 <div class="icon-wrapper">
                     <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
@@ -77,11 +77,9 @@ include "nav.php";
 -->
             <button name="submitChange" type="submit" id="submit-button">Change password</button>
         </form>
-     
+
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-    <script src="js/script.js"></script>
-
-</body>
-</html>
+<?php
+    include 'footer.php';
+?>

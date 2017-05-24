@@ -8,10 +8,10 @@ include "nav.php";
 
 
 
-<body>
-  <div id="login-container">
 
-<?php  
+<div id="login-container">
+
+<?php
 
 if(isset($_SESSION['user'])){
         echo $_SESSION['user'] ;
@@ -20,7 +20,7 @@ exit();
 
       }
       else{
-       
+
 
 $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
@@ -57,9 +57,9 @@ $result=$stmt->get_result();
               exit();
               }
 
-           
-      
-         
+
+
+
     else{
     header("Location: login.php?error=act");
       exit ();

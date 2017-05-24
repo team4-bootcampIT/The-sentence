@@ -32,7 +32,7 @@ include "nav.php";
                 <h3>Retro kuće</h3>
                 <p>Quo id quis iisque dolorem. His laoreet vituperatoribus et, quo doming salutandi at, ferri efficiantur nam et. Vel impedit civibus copiosae ei, quo ut quem assueverit. Ea suas illum atqui mei, etiam praesent iudicabit sea at. Expetenda molestiae disputando duo no, sit ea munere meliore.</p>
             </div>
-        
+
             <div class="article-container">
                 <div class="article-image-container">
                     <img class="article-image" src="https://unsplash.it/460/280?image=1043">
@@ -55,9 +55,9 @@ include "nav.php";
                     <h4>ekologija</h4>
                 </div>
                 <h3>Ekološka katastrofa kod Meksika</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consectetur diam ac ipsum ultrices euismod. 
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consectetur diam ac ipsum ultrices euismod.
     This keyword value indicates to display an ellipsis ('…', U+2026 Horizontal Ellipsis) to represent clipped text. The ellipsis is displayed inside the content area, decreasing the amount of text displayed. If there is not enough space to display the ellipsis, it is clipped.</p>
-            </div>     
+            </div>
 
             <div class="article-container">
                 <div class="article-image-container">
@@ -107,11 +107,11 @@ include "nav.php";
                 <div class="icon-wrapper">
                     <i class="fa fa-user fa-lg" aria-hidden="true"></i>
                 </div>
-                
-                    <input type="text" class="input-login" name="username" placeholder="Username" autofocus>    
-                
+
+                    <input type="text" class="input-login" name="username" placeholder="Username" autofocus>
+
             </div>
-            
+
             <div class="input-wrapper">
                 <div class="icon-wrapper">
                     <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
@@ -133,8 +133,6 @@ include "nav.php";
 -->
 
 
-    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-    <script src="js/script.js"></script>
-
-</body>
-</html>
+<?php
+    include 'footer.php';
+?>
