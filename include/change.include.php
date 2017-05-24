@@ -7,6 +7,7 @@ include "../connect.php";
 if(isset($_POST['submitChange'])){
 	if(isset($_SESSION['user'])){
 
+//SQL injection protection - ovo je jedan način ali je slabija zaštita -> mysqli_real_escape_string
 $email = mysqli_real_escape_string($conn, $_SESSION['user']);
 $loguser = mysqli_real_escape_string($conn, $_SESSION['user']);
 $uid = mysqli_real_escape_string($conn, $_SESSION['id']);
@@ -16,6 +17,7 @@ $password = mysqli_real_escape_string($conn,$_POST['password']);
 $password1 = mysqli_real_escape_string($conn,$_POST['password1']);
 $password2 = mysqli_real_escape_string($conn,$_POST['password2']);
 
+// SQL injection protection - ovo je drugi način i bolja zaštita -> prepared statements
 $stmt=$conn->prepare( "SELECT * FROM prijava WHERE username=? OR email=? ");
 $stmt->bind_param("ss",$username,$email);
 
