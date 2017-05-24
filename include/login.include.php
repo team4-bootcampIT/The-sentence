@@ -5,11 +5,13 @@ session_start();
 include "../connect.php";
 //prikupljanje podataka iz forme
 if(isset($_POST['loginSubmit'])){
+//SQL injection protection - ovo je jedan način ali je slabija zaštita -> mysqli_real_escape_string
 $email = mysqli_real_escape_string($conn, $_POST['loguser']);
 $loguser = mysqli_real_escape_string($conn, $_POST['loguser']);
 $password = mysqli_real_escape_string($conn, $_POST['password']);
 $active=1;
 
+// SQL injection protection - ovo je drugi način i bolja zaštita -> prepared statements
 $stmt=$conn->prepare( "SELECT * FROM prijava WHERE username=? AND active=? OR email=? AND active=? ");
 $stmt->bind_param("sisi",$username,$active,$email,$active);
 

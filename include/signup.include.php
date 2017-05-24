@@ -7,6 +7,7 @@ include "../header.php";
 if(isset($_POST['registerSubmit'])){
  
 //dodavanje vrijednosti iz forme za registraciju
+//SQL injection protection - ovo je jedan način ali je slabija zaštita -> mysqli_real_escape_string
 $username = mysqli_real_escape_string($conn,$_POST['username']);
 $email = mysqli_real_escape_string($conn,$_POST['email']);
 $password = mysqli_real_escape_string($conn,$_POST['password']);
@@ -48,6 +49,7 @@ if (empty($passworda)){
 
 //<---- ako je sve u redu s ispunjavanjem forme - nastavak na provjeru iskoristenosti usernamea i passworda ---->
     else {
+		// SQL injection protection - ovo je drugi način i bolja zaštita -> prepared statements
         $stmt = $conn->prepare("SELECT username FROM prijava WHERE username = ?");
         $stmt->bind_param("s",$username);
 
