@@ -21,7 +21,7 @@ exit();
               }
 
 if (strpos($url,'good=act') !== false){
-  
+
     echo 'Your account is now activated!';}
             //<---------------------------------------------------------------------------------------------------------------------->
           ?>
@@ -81,6 +81,26 @@ if (strpos($url,'good=act') !== false){
             </div>
 
         </form>
+
+        <p class="email-or-social">OR</p>
+
+        <button class="social-login" id="facebook-login">
+            <span class="icon-wrapper" id="icon-wrapper-facebook">
+                <i class="fa fa-facebook fa-lg" aria-hidden="true"></i>
+            </span>
+            <div class="social-login-text">
+                Login with Facebook
+            </div>
+        </button>
+
+        <button class="social-login" id="google-login">
+            <span class="icon-wrapper" id="icon-wrapper-google">
+                <i class="fa fa-google fa-lg" aria-hidden="true"></i>
+            </span>
+            <div class="social-login-text">
+                Login with Google
+            </div>
+        </button>
 
         <?php
             if(isset($_SESSION['user'])) {
