@@ -82,12 +82,12 @@ if (empty($passworda)){
                              else{
                             $encpass= password_hash($password, PASSWORD_DEFAULT);
                             $stmt=$conn->prepare( "INSERT INTO prijava (email,username,password,active,email_code) VALUES (?,?,?,?,?) ");
-                            $stmt->bind_param("sssss",$email,$username,$password,$active,$email_code);
+                            $stmt->bind_param("sssis",$email,$username,$password,$active,$email_code);
 
                             $username=$username;
                             $email=$email;
                             $password=$encpass;
-							$active="No";
+							$active=0;
               $email_code =$email_code ;
 							
                             $stmt->execute();
