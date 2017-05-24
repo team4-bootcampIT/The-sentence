@@ -27,6 +27,7 @@ $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 $email = $_GET['email'];
 $email_code = $_GET['email_code'];
 
+//SQL injection protection - prepared statements
 $stmt=$conn->prepare( "SELECT * FROM prijava WHERE email=? AND email_code=? AND active=?");
 $stmt->bind_param("ssi",$email,$email_code,$active);
 
