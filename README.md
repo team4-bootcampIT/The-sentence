@@ -12,4 +12,4 @@ test 555 / 666>>>>>>> .r96
 
   test 7777s
 
-  još jedan test u isto vrijeme 8888888888888888
+  još jedan test u isto vrijeme 888888888
