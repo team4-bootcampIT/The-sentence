@@ -1,7 +1,8 @@
 <?php
 
 session_start();
-
+include 'connect.php';
+include "include/direct.php";
 
  ?>
 

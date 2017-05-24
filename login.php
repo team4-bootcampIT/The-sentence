@@ -1,6 +1,12 @@
 <?php
     include 'header.php';
     include 'nav.php';
+    if(isset($_SESSION['user'])){
+        header("Location: user.php");
+exit();
+
+      }
+      
 ?>
 
 
@@ -41,7 +47,7 @@ if (strpos($url,'good=act') !== false){
                 <span class="icon-wrapper">
                     <i class="fa fa-user fa-lg" aria-hidden="true"></i>
                 </span>
-                <input type="text" class="input-login" name="loguser" placeholder="Username or email" pattern=".{6,20}" title="Username has to be between 6 and 20 characters long" required autofocus>
+                <input type="text" class="input-login" name="loguser" placeholder="Username or email"  autofocus>
             </div>
 
 
@@ -68,7 +74,7 @@ if (strpos($url,'good=act') !== false){
 
             <div class="remember-container bordery">
                 <label class="switch">  -->
-                    <input type="checkbox" id="remember-me-checkbox">
+                    <input type="checkbox" id="remember-me-checkbox" name="remember" value="true">
                     <div class="slider round"></div>
                 </label>
                 <span class="remember-login-text bordery">Remember me?</span>
