@@ -20,10 +20,10 @@ if(isset($accessToken)){
 		// Dodavanje tokena
 		$_SESSION['facebook_access_token'] = (string) $accessToken;
 
-	  	// OAuth 2.0 client handler nesto od facebooka za tokene 
+	  	// OAuth 2.0 client handler nesto od facebooka za tokene
 		$oAuth2Client = $fb->getOAuth2Client();
 
-		// izmjena tokena dobivanje dugoživuceg tokena 
+		// izmjena tokena dobivanje dugoživuceg tokena
 		$longLivedAccessToken = $oAuth2Client->getLongLivedAccessToken($_SESSION['facebook_access_token']);
 		$_SESSION['facebook_access_token'] = (string) $longLivedAccessToken;
 
@@ -175,7 +175,7 @@ if (strpos($url,'good=act') !== false){
 
         <p class="email-or-social">OR</p>
 
-        <button class="social-login" id="facebook-login">
+        <button  class="social-login" id="facebook-login">
 
             <span class="icon-wrapper" id="icon-wrapper-facebook">
                 <i class="fa fa-facebook fa-lg" aria-hidden="true"></i>
