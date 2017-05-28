@@ -1,4 +1,5 @@
 <?php
+  //  include 'FUser.php';
     include 'header.php';
     include 'nav.php';
     if(isset($_SESSION['user'])){
