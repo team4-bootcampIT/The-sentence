@@ -21,12 +21,7 @@
 
            <?php
            include "connect.php";
-           /* ako si logiran, onda se prikazuje sljedeće: (ovo je originalni kod, ispod je novi, modificiran)
-              if(isset($_SESSION['user'])){
-                  echo $_SESSION['user'] ;
-                       echo"  <a href='change.php'><button type='button' class='nav-button' >Change password</button></a>
-                              <a href='include/logout.include.php'><button type='button' class='nav-button'>Logout</button></a>";
-              }             */
+
               /* ako si logiran, onda se prikazuje sljedeće: */
                  if(isset($_SESSION['user'])){
                      echo "<div class='nav-user-wrapper borderyx'>

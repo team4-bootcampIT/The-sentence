@@ -142,13 +142,6 @@ if (strpos($url,'good=act') !== false){
                 <input type="text" class="input-login" name="loguser" placeholder="Username or email"  autofocus>
             </div>
 
-
-<!-- ------------------------------------------------ -->
-<!-- ovo je uključeno kako bi se mogao prikazivati password
-<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-<script src="path/to/hideShowPassword.min.js"></script>-->
-<!-- ------------------------------------------------ -->
-
             <div class="input-wrapper">
                 <div class="icon-wrapper">
                     <i class="fa fa-lock fa-lg" aria-hidden="true"></i>

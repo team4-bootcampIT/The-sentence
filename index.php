@@ -5,6 +5,25 @@ include "nav.php";
 ?>
 
 
+    <div class="welcome-message-container">
+        <div class="welcome-message">
+            <?php
+            include "connect.php";
+            /* ako si logiran, onda se prikazuje sljedeće: */
+                if(isset($_SESSION['user'])){
+                    echo "<p>Hello, <a class='nav-account' href='account.php'>"
+                                        . $_SESSION['user'] .
+                                    "</a> </p>";
+                          }
+            /* ako nisi logiran, onda se prikazuje ozdravna poruka s login i register: */
+            else {
+                echo"<p>Welcome to The Sentence! For personalised news feed please <a href='login.php' class='boldy'>login</a> or <a href='register.php' class='boldy'>register</a></p>";
+            }
+            ?>
+        </div>
+    </div>
+
+
 
     <main>
         <div class="main-article-container">
@@ -85,52 +104,9 @@ include "nav.php";
             </div>
         </div>
 
-
-
     </main>
 
 
-
-
-
-
-
-
-
-
-<!-- ................ LOGIN FORMAAAAAAAA ..................
-
-    <div id="login-container">
-        <form id="form-container">
-
-            <div class="input-wrapper">
-                <div class="icon-wrapper">
-                    <i class="fa fa-user fa-lg" aria-hidden="true"></i>
-                </div>
-
-                    <input type="text" class="input-login" name="username" placeholder="Username" autofocus>
-
-            </div>
-
-            <div class="input-wrapper">
-                <div class="icon-wrapper">
-                    <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
-                </div>
-                <input type="password" class="input-login" name="password" placeholder="Password">
-            </div>
-
-            <div class="remember-container">
-                <label class="switch">
-                  <input type="checkbox">
-                  <div class="slider round"></div>
-                </label>
-                <span class="remember-login-text">Remember login?</span>
-            </div>
-
-            <button type="button" id="submit-button">Login</button>
-        </form>
-    </div>
--->
 
 
 <?php

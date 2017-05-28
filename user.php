@@ -1,6 +1,5 @@
 <?php
     include 'header.php';
-
     include 'nav.php';
 ?>
 
@@ -16,7 +15,7 @@
                     echo " you're logged in";
 
                   }
-                  else{
+                  else {
                      header("Location: login.php?error=notlogged");
                     exit ();
                   }

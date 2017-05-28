@@ -81,15 +81,7 @@ include "nav.php";
                   </div>
                   <input  type="password" class="input-login" name="passworda" placeholder="Repeat password">
               </div>
-   <!--
-              <div class="remember-container">
-                  <label class="switch">
-                    <input type="checkbox">
-                    <div class="slider round"></div>
-                  </label>
-                  <span class="remember-login-text">Remember login?</span>
-              </div>
-  -->
+
               <button name="registerSubmit" type="submit" id="submit-button">Create account</button>
           </form>
       </div>

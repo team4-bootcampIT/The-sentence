@@ -177,6 +177,27 @@ div.nav-login-container
 
 
 
+/* -------------------------------------- WELCOME MESSAGE ----------------------------------------------*/
+.welcome-message-container {
+    width: 100%;
+    background: #2196F3;
+}
+
+.welcome-message {
+    max-width: 810px;
+    margin: 0 auto;
+    padding: 10px 15px;
+    color: #fff;
+}
+
+.boldy {
+    font-weight: bold;
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* -------------------------------------- WELCOME MESSAGE end ----------------------------------------------*/
+
 
 
 /* ------------------------------------------------ ARTICLE ------------------------------------------------ */
