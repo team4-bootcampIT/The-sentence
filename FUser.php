@@ -1,4 +1,5 @@
 <?php
+// stvaranje klase korisnik u koje ukucavam login informacije za bazu i ime tablice di ce se podaci pohranjivati
 class User {
 	private $dbHost     = "localhost";
     private $dbUsername = "root";
@@ -20,25 +21,24 @@ class User {
 
 	function checkUser($userData = array()){
 		if(!empty($userData)){
-			// Check whether user data already exists in database
+			// Provjera dali je korisnik vec u bazi
 			$prevQuery = "SELECT * FROM ".$this->userTbl." WHERE oauth_provider = '".$userData['oauth_provider']."' AND oauth_uid = '".$userData['oauth_uid']."'";
 			$prevResult = $this->db->query($prevQuery);
 			if($prevResult->num_rows > 0){
-				// Update user data if already exists
+				// Update podataka  u bazi "vazno za datume  i tokene"
 				$query = "UPDATE ".$this->userTbl." SET first_name = '".$userData['first_name']."', last_name = '".$userData['last_name']."', email = '".$userData['email']."', gender = '".$userData['gender']."', locale = '".$userData['locale']."', picture = '".$userData['picture']."', link = '".$userData['link']."', modified = '".date("Y-m-d H:i:s")."' WHERE oauth_provider = '".$userData['oauth_provider']."' AND oauth_uid = '".$userData['oauth_uid']."'";
 				$update = $this->db->query($query);
 			}else{
-				// Insert user data
+				// Dodavanje novih ako neki fale
 				$query = "INSERT INTO ".$this->userTbl." SET oauth_provider = '".$userData['oauth_provider']."', oauth_uid = '".$userData['oauth_uid']."', first_name = '".$userData['first_name']."', last_name = '".$userData['last_name']."', email = '".$userData['email']."', gender = '".$userData['gender']."', locale = '".$userData['locale']."', picture = '".$userData['picture']."', link = '".$userData['link']."', created = '".date("Y-m-d H:i:s")."', modified = '".date("Y-m-d H:i:s")."'";
 				$insert = $this->db->query($query);
 			}
-
-			// Get user data from the database
+			// Povlacenje podataka iz baze
 			$result = $this->db->query($prevQuery);
 			$userData = $result->fetch_assoc();
 		}
 
-		// Return user data
+		// Vracanje podataka iz baze za koristenje daljno
 		return $userData;
 	}
 }
