@@ -3,33 +3,33 @@ if(!session_id()){
 	session_start();
 }
 
-// Include the autoloader provided in the SDK
+// Dodavanje autoloadera iz Faacebook SDK kita (vezano za  nekakv njihov login sa tokenima)
 require_once __DIR__ . '/facebook-php-sdk/autoload.php';
 
-// Include required libraries
+// Dodavanje facebook libarija
 use Facebook\Facebook;
 use Facebook\Exceptions\FacebookResponseException;
 use Facebook\Exceptions\FacebookSDKException;
 
 /*
- * Configuration and setup Facebook SDK
+ * Konfiguracija za povezivanjem sa facebookom
  */
 $appId 			= '1900306316917151'; //Facebook App ID
 $appSecret 		= '18bc8f251ca15759da8ea08042e1088f'; //Facebook App Secret
 $redirectURL 	= 'http://localhost/trunk/login.php'; //Callback URL
-$fbPermissions 	= array('email');  //Optional permissions
-
+$fbPermissions 	= array('email');  
+// stvaranje Arejja sa podacima vezanim za facebook
 $fb = new Facebook(array(
 	'app_id' => $appId,
 	'app_secret' => $appSecret,
 	'default_graph_version' => 'v2.2',
 ));
 
-// Get redirect login helper
+//Ovo tu nesto treba i sa ovim sam se jebo 2 dana i jos uvjek neznam sta radi .. ali radi!
 $helper = $fb->getRedirectLoginHelper();
 $_SESSION['FBRLH_state']=$_GET['state'];
 
-// Try to get access token
+// Pokusaj dobivanje tokena 
 try {
 	if(isset($_SESSION['facebook_access_token'])){
 		$accessToken = $_SESSION['facebook_access_token'];
