@@ -537,12 +537,17 @@ div.nav-login-container
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
+
 .social-login-text {
     padding-left: 42px;
 }
 
 #facebook-login {
     background: #4267B2;
+}
+
+#facebook-login:hover {
+    background: #34528e;;
 }
 
 #google-login {
@@ -553,6 +558,7 @@ div.nav-login-container
     background: #4267B2;
     border-right: 1px solid #7591cc;
 }
+
 
 #icon-wrapper-google {
     background: #DD4B39;
