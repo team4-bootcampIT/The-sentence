@@ -17,7 +17,7 @@ use Facebook\Exceptions\FacebookSDKException;
 $appId 			= '1900306316917151'; //Facebook App ID
 $appSecret 		= '18bc8f251ca15759da8ea08042e1088f'; //Facebook App Secret
 $redirectURL 	= 'http://localhost/trunk/login.php'; //Callback URL
-$fbPermissions 	= array('email');  
+$fbPermissions 	= array('email');
 // stvaranje Arejja sa podacima vezanim za facebook
 $fb = new Facebook(array(
 	'app_id' => $appId,
@@ -27,9 +27,9 @@ $fb = new Facebook(array(
 
 //Ovo tu nesto treba i sa ovim sam se jebo 2 dana i jos uvjek neznam sta radi .. ali radi!
 $helper = $fb->getRedirectLoginHelper();
-$_SESSION['FBRLH_state']=$_GET['state'];
+//$_SESSION['FBRLH_state']=$_GET['state'];
 
-// Pokusaj dobivanje tokena 
+// Pokusaj dobivanje tokena
 try {
 	if(isset($_SESSION['facebook_access_token'])){
 		$accessToken = $_SESSION['facebook_access_token'];
