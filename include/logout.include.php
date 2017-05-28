@@ -8,14 +8,14 @@ setcookie ("mbto", "", time() - 3600, "/");
 		session_unset();
 session_destroy();
 	header("Location: ../index.php");
-	// Include FB config file
+	// povezivanje sa fbConfig
 	require_once 'fbConfig.php';
 
-	// Remove access token from session
+	// Brisanje tokena iz sesije
 	unset($_SESSION['facebook_access_token']);
 
-	// Remove user data from session
+	// Micanje podataka od korisnika iz sesije
 	unset($_SESSION['userData']);
 
-	// Redirect to the homepage
+	// Vrati na index
 	header("Location:index.php");
