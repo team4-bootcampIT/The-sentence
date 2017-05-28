@@ -9,7 +9,7 @@ exit();
 
 ?>
 <?php
-// Include FB config file && User class
+// Inkludanje fajlova koji su potrebni za logiranje pomocu facebooka
 require_once 'fbConfig.php';
 require_once 'FUser.php';
 
@@ -17,33 +17,33 @@ if(isset($accessToken)){
 	if(isset($_SESSION['facebook_access_token'])){
 		$fb->setDefaultAccessToken($_SESSION['facebook_access_token']);
 	}else{
-		// Put short-lived access token in session
+		// Dodavanje tokena
 		$_SESSION['facebook_access_token'] = (string) $accessToken;
 
-	  	// OAuth 2.0 client handler helps to manage access tokens
+	  	// OAuth 2.0 client handler nesto od facebooka za tokene 
 		$oAuth2Client = $fb->getOAuth2Client();
 
-		// Exchanges a short-lived access token for a long-lived one
+		// izmjena tokena dobivanje dugoživuceg tokena 
 		$longLivedAccessToken = $oAuth2Client->getLongLivedAccessToken($_SESSION['facebook_access_token']);
 		$_SESSION['facebook_access_token'] = (string) $longLivedAccessToken;
 
-		// Set default access token to be used in script
+		// dodavanje tokena u skriptu za provjeru
 		$fb->setDefaultAccessToken($_SESSION['facebook_access_token']);
 	}
 
-	// Redirect the user back to the same page if url has "code" parameter in query string
+	// Vracanje korisnika vnazad ako ima kod  to je ono code= bla bla bla ovo je tu za test meni nesto najverojatnije kasnije ide ca
 	if(isset($_GET['code'])){
 		header('Location: ./');
 	}
 
-	// Getting user facebook profile info
+	// Dohvacanje  podataka
 	try {
 		$profileRequest = $fb->get('/me?fields=name,first_name,last_name,email,link,gender,locale,picture');
 		$fbUserProfile = $profileRequest->getGraphNode()->asArray();
 	} catch(FacebookResponseException $e) {
 		echo 'Graph returned an error: ' . $e->getMessage();
 		session_destroy();
-		// Redirect user back to app login page
+		// Vracanje nazad na lokaciju .. isto netreba najverojatnije  pogotov za graphove koje necemo niti koristiti al aj dobro
 		header("Location: ./");
 		exit;
 	} catch(FacebookSDKException $e) {
@@ -51,10 +51,10 @@ if(isset($accessToken)){
 		exit;
 	}
 
-	// Initialize User class
+	//stvori novu klasu korisnik
 	$user = new User();
 
-	// Insert or update user data to the database
+	// dodavanje i vracanje podataka u array
 	$fbUserData = array(
 		'oauth_provider'=> 'facebook',
 		'oauth_uid' 	=> $fbUserProfile['id'],
@@ -68,13 +68,13 @@ if(isset($accessToken)){
 	);
 	$userData = $user->checkUser($fbUserData);
 
-	// Put user data into session
+	// dodavanje podataka u sesiju
 	$_SESSION['userData'] = $userData;
 
-	// Get logout url
+	// Logout url ... ovo treba tu povezat sa logout buttonom
 	$logoutURL = $helper->getLogoutUrl($accessToken, $redirectURL.'logout.php');
 
-	// Render facebook profile data
+	// ispis podataka
 	if(!empty($userData)){
 		$output  = '<h1>Facebook Profile Details </h1>';
 		$output .= '<img src="'.$userData['picture'].'">';
@@ -91,12 +91,13 @@ if(isset($accessToken)){
 	}
 
 }else{
-	// Get login url
+	// ovo treba povezat sa loginbuttonom
 	$loginURL = $helper->getLoginUrl($redirectURL, $fbPermissions);
 
-	// Render facebook login button
+	//  I ovo tu!
 	$output = '<a href="'.htmlspecialchars($loginURL).'"><img src="images/fblogin-btn.png"></a>';
 }
+// ovo tu ispod je ispis cisti dodan u neki div tek tolko
 ?>
 <div><?php echo $output; ?></div>
 <main>
