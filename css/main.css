@@ -16,9 +16,12 @@ body {
 }
 
 main {
-    padding: 15px;
+    padding: 10px;
 }
 
+.index-main {
+    padding: 0;
+}
 
 /* ------------------------------------------------ NAV ------------------------------------------------ */
 
@@ -158,6 +161,7 @@ div.nav-login-container
 /* --- NAV LOGIN FORM --- */
 
 .nav-button {
+
     height: 36px;
     background: #2196F3;
     border: none;
@@ -178,15 +182,13 @@ div.nav-login-container
 
 
 /* -------------------------------------- WELCOME MESSAGE ----------------------------------------------*/
-.welcome-message-container {
-    width: 100%;
-    background: #2196F3;
-}
 
 .welcome-message {
-    max-width: 810px;
-    margin: 0 auto;
+    max-width: 790px;
+    margin: 20px auto;
     padding: 10px 15px;
+    border-radius: 5px;
+    background: #2196F3;
     color: #fff;
 }
 
@@ -204,7 +206,7 @@ div.nav-login-container
 
 
 .main-article-container {
-        margin: 20px auto;
+        margin: 0 auto;
     }
 
 .article-container {
@@ -282,7 +284,6 @@ div.nav-login-container
     .article-container {
         display: inline-block;
 
-
         width: 250px;
         height: 300px;
         margin: 10px;
@@ -297,10 +298,21 @@ div.nav-login-container
 
 }
 
+@media screen and (min-width: 680px) {
+    .main-article-container {
+        width: 640px;
+    }
+    .article-container {
+        width: 300px;
+    }
+}
 
-@media screen and (min-width: 810px) {
+@media screen and (min-width: 830px) {
     .main-article-container {
         width: 810px;
+    }
+    .article-container {
+        width: 250px;
     }
 }
 
@@ -522,6 +534,7 @@ div.nav-login-container
 /* --- LOGIN end --- */
 
 
+/* ---------------------- SOCIAL LOGIN ----------------- */
 
 .social-login {
     position: relative;
@@ -602,7 +615,7 @@ div.nav-login-container
 .poruke{
     margin-top:-20px;
     margin-bottom: :-20px;
-   width: 100%;
+    width: 100%;
     font-style: normal;
     text-align:center;
     color:#E52D2D;
@@ -637,6 +650,34 @@ a:link {
 
 
 
+/* --------------------------- MY ACCOUNT ------------------------ */
+
+.account-button {
+    display: block;
+    width: 100%;
+    height: 36px;
+    background: #2196F3;
+    border: none;
+    color: #fff;
+    margin-bottom: 20px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.account-button:hover {
+    background: #0c7cd5;
+}
+
+.return-to-homepage-button {
+    font-weight: bold;
+    color: #0161a3;
+    text-decoration: underline;
+
+}
+
+/* --------------------------- MY ACCOUNT end ------------------------ */
 
 
 

@@ -12,7 +12,8 @@
 
                   if(isset($_SESSION['user'])){
                     echo $_SESSION['user'] ;
-                    echo " you're logged in";
+                    echo " you're logged in.<br>
+                    Return to <a href='index.php' class='return-to-homepage-button'>homepage.";
 
                   }
                   else {

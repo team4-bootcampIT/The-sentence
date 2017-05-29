@@ -7,9 +7,7 @@ include "nav.php";
 
 
 
-
-
-
+<main>
     <div id="login-container">
     <div id="poruke1">
  <?php
@@ -79,6 +77,7 @@ include "nav.php";
         </form>
 
     </div>
+</main>
 
 <?php
     include 'footer.php';

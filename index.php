@@ -4,7 +4,7 @@ include 'header.php';
 include "nav.php";
 ?>
 
-
+<main>
     <div class="welcome-message-container">
         <div class="welcome-message">
             <?php
@@ -17,15 +17,15 @@ include "nav.php";
                           }
             /* ako nisi logiran, onda se prikazuje ozdravna poruka s login i register: */
             else {
-                echo"<p>Welcome to The Sentence! For personalised news feed please <a href='login.php' class='boldy'>login</a> or <a href='register.php' class='boldy'>register</a></p>";
+                echo"<p>Welcome to The Sentence! For personalised news feed please <a href='login.php' class='boldy'>login</a> or <a href='register.php' class='boldy'>register</a>.</p>";
             }
             ?>
         </div>
     </div>
+</main>
 
 
-
-    <main>
+    <main class="index-main">
         <div class="main-article-container">
             <div class="article-container">
                 <div class="article-image-container">
