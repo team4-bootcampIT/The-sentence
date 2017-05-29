@@ -50,7 +50,7 @@ if ($gClient->getAccessToken()) {
         $output .= '<br/>Locale : ' . $userData['locale'];
         $output .= '<br/>Logged in with : Google';
         $output .= '<br/><a href="'.$userData['link'].'" target="_blank">Click to Visit Google+ Page</a>';
-        $output .= '<br/><a href="glogout.php">Logout with Google</a>';
+
 // postavljam $_SESSION tako da user.php radi bez da se korisnik mora ponovno logirati
 		$_SESSION['user']= $userData['first_name'];	
 // dodajem gumb koji logiranog korisnika vodi na user.php		
