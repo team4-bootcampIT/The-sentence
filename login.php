@@ -195,6 +195,8 @@ if (strpos($url,'good=act') !== false){
         <div><?php echo $output; ?></div>
 
 <!--
+    dizajn za facebook login tipku, dodan je iznad u $output.
+
         <button  class="social-login" id="facebook-login">
             <span class="icon-wrapper" id="icon-wrapper-facebook">
                 <i class="fa fa-facebook fa-lg" aria-hidden="true"></i>
@@ -204,6 +206,7 @@ if (strpos($url,'good=act') !== false){
             </div>
         </button>
 -->
+
         <a href="google/google.php"><button class="social-login" id="google-login">
             <span class="icon-wrapper" id="icon-wrapper-google">
                 <i class="fa fa-google fa-lg" aria-hidden="true"></i>

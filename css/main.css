@@ -323,7 +323,7 @@ div.nav-login-container
 
 #login-container {
     max-width: 350px;
-    margin: 100px auto 0 auto;
+    margin: 50px auto 0 auto;
     padding: 20px;
     background: #e0e0e0;
     border-radius: 5px;
@@ -331,7 +331,7 @@ div.nav-login-container
 
 #register-container {
     max-width: 350px;
-    margin: 100px auto 0 auto;
+    margin: 50px auto 0 auto;
     padding: 20px;
     background: #e0e0e0;
     border-radius: 5px;
@@ -565,6 +565,10 @@ div.nav-login-container
 
 #google-login {
     background: #DD4B39;
+}
+
+#google-login:hover {
+    background: #b03c2d;
 }
 
 #icon-wrapper-facebook {

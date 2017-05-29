@@ -3,7 +3,10 @@
 /* include 'connect.php';   */
 include 'header.php';
 include "nav.php";
-
+if(isset($_SESSION['user'])){
+    header("Location: user.php");
+exit();
+}
 ?>
 
 
