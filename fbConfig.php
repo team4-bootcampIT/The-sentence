@@ -16,7 +16,7 @@ use Facebook\Exceptions\FacebookSDKException;
  */
 $appId 			= '1900306316917151'; //Facebook App ID
 $appSecret 		= '18bc8f251ca15759da8ea08042e1088f'; //Facebook App Secret
-$redirectURL 	= 'http://localhost/trunk/login.php'; //Callback URL
+$redirectURL 	= 'http://localhost/trunk/facebookinfo.php'; //Callback URLS
 $fbPermissions 	= array('email');
 // stvaranje Arejja sa podacima vezanim za facebook
 $fb = new Facebook(array(
