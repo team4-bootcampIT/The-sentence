@@ -3,9 +3,9 @@ class User {
 	private $dbHost     = "localhost";
     private $dbUsername = "root";
     private $dbPassword = "";
-    private $dbName     = "baza";
+    private $dbName     = "testbaza_facebook";
     private $userTbl    = "prijava";
-	
+
 	function __construct(){
         if(!isset($this->db)){
             //spajanje s bazom
@@ -17,7 +17,7 @@ class User {
             }
         }
     }
-	
+
 	function checkUser($userData = array()){
         if(!empty($userData)){
             //provjera postoji li korisnik vec u bazi
@@ -32,12 +32,12 @@ class User {
                 $query = "INSERT INTO ".$this->userTbl." SET oauth_provider = '".$userData['oauth_provider']."', oauth_uid = '".$userData['oauth_uid']."', first_name = '".$userData['first_name']."', last_name = '".$userData['last_name']."', username = '".$userData['first_name']."', email = '".$userData['email']."', gender = '".$userData['gender']."', locale = '".$userData['locale']."', picture = '".$userData['picture']."', link = '".$userData['link']."', created = '".date("Y-m-d H:i:s")."', modified = '".date("Y-m-d H:i:s")."'";
                 $insert = $this->db->query($query);
             }
-            
+
             //dohvacanje korisnickih podataka iz baze
             $result = $this->db->query($prevQuery);
             $userData = $result->fetch_assoc();
         }
-        
+
         return $userData;
     }
 }

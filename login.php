@@ -103,7 +103,7 @@ if (strpos($url,'good=act') !== false){
         	}else{
         		// Dodavanje tokena
         		$_SESSION['facebook_access_token'] = (string) $accessToken;
-
+            $_SESSION['user']= $userData['first_name'];
         	  	// OAuth 2.0 client handler nesto od facebooka za tokene
         		$oAuth2Client = $fb->getOAuth2Client();
 
@@ -154,23 +154,25 @@ if (strpos($url,'good=act') !== false){
 
         	// dodavanje podataka u sesiju
         	$_SESSION['userData'] = $userData;
-
         	// Logout url ... ovo treba tu povezat sa logout buttonom
         	$logoutURL = $helper->getLogoutUrl($accessToken, $redirectURL.'logout.php');
 
-        	// ispis podataka
+        	//ispis podataka
         	if(!empty($userData)){
-        		$output  = '<h1>Facebook Profile Details </h1>';
-        		$output .= '<img src="'.$userData['picture'].'">';
-                $output .= '<br/>Facebook ID : ' . $userData['oauth_uid'];
-                $output .= '<br/>Name : ' . $userData['first_name'].' '.$userData['last_name'];
-                $output .= '<br/>Email : ' . $userData['email'];
-                $output .= '<br/>Gender : ' . $userData['gender'];
-                $output .= '<br/>Locale : ' . $userData['locale'];
-                $output .= '<br/>Logged in with : Facebook';
-        		$output .= '<br/><a href="'.$userData['link'].'" target="_blank">Click to Visit Facebook Page</a>';
-                $output .= '<br/>Logout from <a href="'.$logoutURL.'">Facebook</a>';
+              $_SESSION['user']= $userData['first_name'];
+        	//	$output  = '<h1>Facebook Profile Details </h1>';
+        	//	$output .= '<img src="'.$userData['picture'].'">';
+              //  $output .= '<br/>Facebook ID : ' . $userData['oauth_uid'];
+            //    $output .= '<br/>Name : ' . $userData['first_name'].' '.$userData['last_name'];
+
+            //    $output .= '<br/>Email : ' . $userData['email'];
+            //    $output .= '<br/>Gender : ' . $userData['gender'];
+              //  $output .= '<br/>Locale : ' . $userData['locale'];
+            //    $output .= '<br/>Logged in with : Facebook';
+        	//	$output .= '<br/><a href="'.$userData['link'].'" target="_blank">Click to Visit Facebook Page</a>';
+            //    $output .= '<br/>Logout from <a href="'.$logoutURL.'">Facebook</a>';
         	}else{
+
         		$output = '<h3 style="color:red">Some problem occurred, please try again.</h3>';
         	}
 

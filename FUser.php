@@ -1,4 +1,5 @@
 <?php
+//include 'connect.php';
 // stvaranje klase korisnik u koje ukucavam login informacije za bazu i ime tablice di ce se podaci pohranjivati
 class User {
 	private $dbHost     = "localhost";
