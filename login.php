@@ -204,7 +204,7 @@ if (strpos($url,'good=act') !== false){
             </div>
         </button>
 -->
-        <button class="social-login" id="google-login">
+        <a href="google/google.php"><button class="social-login" id="google-login">
             <span class="icon-wrapper" id="icon-wrapper-google">
                 <i class="fa fa-google fa-lg" aria-hidden="true"></i>
             </span>
@@ -212,6 +212,7 @@ if (strpos($url,'good=act') !== false){
                 Login with Google
             </div>
         </button>
+		</a>
 
         <?php
             if(isset($_SESSION['user'])) {
