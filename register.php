@@ -12,8 +12,6 @@ exit();
 
 
 
-
-
     <main>
       <div id="register-container">
           <form action="include/signup.include.php" method="POST" id="form-container">
@@ -91,6 +89,10 @@ exit();
     </main>
 
 
+    <?php
+        include 'footer.php';
+    ?>
+    
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
 <script>
@@ -157,8 +159,3 @@ errorPlacement: function(error,element){
 
 
 </script>
-
-
-<?php
-    include 'footer.php';
-?>
