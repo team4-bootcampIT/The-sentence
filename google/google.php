@@ -40,7 +40,7 @@ if ($gClient->getAccessToken()) {
 	
 	//povlacenje korisnickih podataka za ispis
     if(!empty($userData)){
-		
+		/*
         $output = '<h1>Google+ Profile Details</h1>';
         $output .= '<img src="'.$userData['picture'].'" width="300" height="220">';
         $output .= '<br/>Google ID : ' . $userData['oauth_uid'];
@@ -50,11 +50,14 @@ if ($gClient->getAccessToken()) {
         $output .= '<br/>Locale : ' . $userData['locale'];
         $output .= '<br/>Logged in with : Google';
         $output .= '<br/><a href="'.$userData['link'].'" target="_blank">Click to Visit Google+ Page</a>';
+		*/
 
 // postavljam $_SESSION tako da user.php radi bez da se korisnik mora ponovno logirati
 		$_SESSION['user']= $userData['first_name'];	
-// dodajem gumb koji logiranog korisnika vodi na user.php		
-		$output .= '<br/><br/><a href="../user.php"><button type="button" class="nav-button">Go to The sentence webpage</button></a>';
+// redirect na user.php nakon logina s Google-om
+		header('Location: ../user.php');
+// dodajem gumb koji logiranog korisnika vodi na user.php u slučaju kada radimo ispis podataka s Google-a, odnosno redovi 44-52	
+		//$output .= '<br/><br/><a href="../user.php"><button type="button" class="nav-button">Go to The sentence webpage</button></a>';
     }else{
         $output = '<h3 style="color:red">Some problem occurred, please try again.</h3>';
     }
