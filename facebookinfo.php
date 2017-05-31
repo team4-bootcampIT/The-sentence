@@ -1,7 +1,8 @@
 <?php
 // Include FB config file && User class
-require_once 'fbConfig.php';
-require_once 'FUser.php';
+include_once 'fbConfig.php';
+include_once'FUser.php';
+
 
 if(isset($accessToken)){
 	if(isset($_SESSION['facebook_access_token'])){
@@ -66,7 +67,7 @@ if(isset($accessToken)){
 
 	// Render facebook profile data
 	if(!empty($userData)){
-		$output  = '<h1>Facebook Profile Details </h1>';
+	/*	$output  = '<h1>Facebook Profile Details </h1>';
 		$output .= '<img src="'.$userData['picture'].'">';
         $output .= '<br/>Facebook ID : ' . $userData['oauth_uid'];
         $output .= '<br/>Name : ' . $userData['first_name'].' '.$userData['last_name'];
@@ -75,10 +76,11 @@ if(isset($accessToken)){
         $output .= '<br/>Locale : ' . $userData['locale'];
         $output .= '<br/>Logged in with : Facebook';
 		$output .= '<br/><a href="'.$userData['link'].'" target="_blank">Click to Visit Facebook Page</a>';
-        $output .= '<br/>Logout from <a href="'.$logoutURL.'">Facebook</a>';
+        $output .= '<br/>Logout from <a href="'.$logoutURL.'">Facebook</a>'; */
 				$_SESSION['user']= $userData['first_name'];
+				header("Location: user.php");
 		// dodajem gumb koji logiranog korisnika vodi na user.php
-				$output .= '<br/><br/><a href="../user.php"><button type="button" class="nav-button">Go to The sentence webpage</button></a>';
+			//$output .= '<br/><br/><a href="../user.php"><button type="button" class="nav-button">Go to The sentence webpage</button></a>';
 	}else{
 		$output = '<h3 style="color:red">Some problem occurred, please try again.</h3>';
 	}
@@ -86,20 +88,9 @@ if(isset($accessToken)){
 }else{
 	// Get login url
 	$loginURL = $helper->getLoginUrl($redirectURL, $fbPermissions);
+	header('Location: ' . filter_var($loginURL, FILTER_SANITIZE_URL));
 
 	// Render facebook login button
-	$output = '<a href="'.htmlspecialchars($loginURL).'"><img src="images/fblogin-btn.png"></a>';
+	//$output = '<a href="'.htmlspecialchars($loginURL).'"><img src="images/fblogin-btn.png"></a>';
 }
 ?>
-<html>
-<head>
-<title>Login to The Sentence with Facebook</title>
-<style type="text/css">
-	h1{font-family:Arial, Helvetica, sans-serif;color:#999999;}
-</style>
-</head>
-<body>
-	<!-- Display login button / Facebook profile information -->
-	<div><?php echo $output; ?></div>
-</body>
-</html>
