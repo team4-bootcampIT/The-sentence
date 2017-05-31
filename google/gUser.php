@@ -3,7 +3,7 @@ class User {
 	private $dbHost     = "localhost";
     private $dbUsername = "root";
     private $dbPassword = "";
-    private $dbName     = "testbaza_facebook";
+    private $dbName     = "baza";
     private $userTbl    = "prijava";
 
 	function __construct(){
@@ -25,7 +25,7 @@ class User {
             $prevResult = $this->db->query($prevQuery);
             if($prevResult->num_rows > 0){
                 //azuriranje podataka ako korisnik vec postoji u bazi
-                $query = "UPDATE ".$this->userTbl." SET first_name = '".$userData['first_name']."', last_name = '".$userData['last_name']."', username = '".$userData['first_name']."', email = '".$userData['email']."', gender = '".$userData['gender']."', locale = '".$userData['locale']."', picture = '".$userData['picture']."', link = '".$userData['link']."', modified = '".date("Y-m-d H:i:s")."' WHERE oauth_provider = '".$userData['oauth_provider']."' AND oauth_uid = '".$userData['oauth_uid']."'";
+                $query = "UPDATE ".$this->userTbl." SET first_name = '".$userData['first_name']."', last_name = '".$userData['last_name']."', username = '".$userData['first_name']."', password='$2y$10$3ShY3d693ca0qOZHyXjoBOC0a1LM.pjWgrpV7GxxuU.jTjUzRhpdK', active='1', email = '".$userData['email']."', gender = '".$userData['gender']."', locale = '".$userData['locale']."', picture = '".$userData['picture']."', link = '".$userData['link']."', modified = '".date("Y-m-d H:i:s")."' WHERE oauth_provider = '".$userData['oauth_provider']."' AND oauth_uid = '".$userData['oauth_uid']."'";
                 $update = $this->db->query($query);
             }else{
                 //upisivanje podataka ako korisnik ne postoji u bazi
