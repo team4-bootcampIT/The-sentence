@@ -59,15 +59,25 @@ exit();
 
 
               <div class="input-wrapper1">
-
                   <div class="icon-wrapper1">
                       <i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
                   </div>
-
-                      <input  type="email" class="input-login" name="email" placeholder="Email"
-                       autofocus>
-
+                  <input  type="email" class="input-login" name="email" placeholder="Email" autofocus>
               </div>
+
+<!-- Gender-->
+                  <div class="gender-2">
+                      <input type="radio" id="input-radio-male" name="gender" value="male">
+                      <label for="input-radio-male" class="gender-button gender-m-left">
+                          <i class="fa fa-mars" aria-hidden="true"></i> Male
+                      </label>
+
+                      <input type="radio" id="input-radio-female" name="gender" value="female">
+                      <label for="input-radio-female" class="gender-button gender-f-right">
+                          <i class="fa fa-venus" aria-hidden="true"></i> Female
+                      </label>
+                  </div>
+<!-- Gender end -->
 
               <div class="input-wrapper1">
                   <div class="icon-wrapper1">
@@ -83,6 +93,9 @@ exit();
                   <input  type="password" class="input-login" name="passworda" placeholder="Repeat password">
               </div>
 
+
+
+
               <button name="registerSubmit" type="submit" id="submit-button">Create account</button>
           </form>
       </div>
@@ -92,7 +105,7 @@ exit();
     <?php
         include 'footer.php';
     ?>
-    
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
 <script>

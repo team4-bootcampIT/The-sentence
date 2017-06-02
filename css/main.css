@@ -222,6 +222,42 @@ div.nav-login-container
     border: 1px solid #0161a3;
 }
 
+/*************************/
+.article-container1 {
+	    display: inline-block;
+	    float: left;
+	    text-align: center;
+	width:97.5%;
+
+
+	    padding: 5px,10px,5px,10px;
+	    margin-left:10px;
+	margin-right:10px;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    border: 1px solid #0161a3;
+	}
+	.pozdravno{
+
+	 font-family: 'Open Sans', sans-serif;
+	  color: #444;
+
+	    text-overflow: ellipsis;
+
+	}
+
+    .article-container1 {
+ 	        display: inline-block;
+
+
+ 	        width: 520px;
+
+ 	        margin: 10px;
+ 	        padding: 10px;
+ 	    }
+/************************************/
+
+
 .article-image-container {
     position: relative;
     height: 140px;
@@ -588,6 +624,66 @@ div.nav-login-container
     margin-bottom: 15px;
 }
 
+/* gender */
+
+.gender-2 {
+    background: #fff;
+    width: 100%;
+    height: 42px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    color: #ccc;
+}
+
+.gender-button {
+    width: 50%;
+    height: 42px;
+    line-height: 42px;
+    vertical-align: middle;
+    text-align: center;
+    float: left;
+    border: none;
+    background: #fff;
+    color: #ccc;
+    cursor: pointer;
+
+    /* text se ne može označiti / kopirati */
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+}
+
+.gender-m-left {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: 1px solid #e0e0e0;
+}
+
+.gender-f-right {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left: 1px solid #e0e0e0;
+}
+
+.gender-button:hover {
+    color: #555;
+}
+
+#input-radio-male, #input-radio-female {
+  position: absolute;
+  visibility: hidden;
+  display: none;
+}
+
+input[type=radio]:checked + .gender-button {
+    border: 3px solid #0161a3;
+    line-height: 36px;
+    color: #555;
+}
+
+/* gender end */
 
 
 .input-wrapper1 {
@@ -684,12 +780,11 @@ a:link {
 /* --------------------------- MY ACCOUNT end ------------------------ */
 
 
-
 /*
+
 .bordery {
-    border: 1px solid blue;
+    border: 1px solid red;
 }
 .borderyx {
     border: 1px solid blue;
 }
-*/

@@ -5,11 +5,12 @@ include "../header.php";
 
 
 if(isset($_POST['registerSubmit'])){
- 
+
 //dodavanje vrijednosti iz forme za registraciju
 //SQL injection protection - ovo je jedan način ali je slabija zaštita -> mysqli_real_escape_string
 $username = mysqli_real_escape_string($conn,$_POST['username']);
 $email = mysqli_real_escape_string($conn,$_POST['email']);
+$gender = mysqli_real_escape_string($conn,$_POST['gender']);
 $password = mysqli_real_escape_string($conn,$_POST['password']);
 $passworda = mysqli_real_escape_string($conn,$_POST['passworda']);
 $email_code = md5($_POST['username']+rand());
@@ -30,7 +31,7 @@ if (empty($username)){
 }
 if (empty($email)){
    $error[] = 'Username provided is already in use.';
-    
+
 }
 
 if (empty($password)){
@@ -59,7 +60,7 @@ if (empty($passworda)){
         $result=$stmt->get_result();
 
         $rowNum=$result->num_rows;
-    
+
        if($rowNum>0){
         header("Location: ../register.php?error=username");
                 exit();
@@ -76,22 +77,23 @@ if (empty($passworda)){
 
         $result=$stmt->get_result();
         $rowNum=$result->num_rows;
-               
+
                    if($rowNum>0){
                    header("Location: ../register.php?error=exemail");
                            exit();
                              }
                              else{
                             $encpass= password_hash($password, PASSWORD_DEFAULT);
-                            $stmt=$conn->prepare( "INSERT INTO prijava (email,username,password,active,email_code) VALUES (?,?,?,?,?) ");
-                            $stmt->bind_param("sssis",$email,$username,$password,$active,$email_code);
+                            $stmt=$conn->prepare( "INSERT INTO prijava (email,username,gender,password,active,email_code) VALUES (?,?,?,?,?,?) ");
+                            $stmt->bind_param("ssssis",$email,$username,$gender,$password,$active,$email_code);
 
                             $username=$username;
                             $email=$email;
+                            $gender=$gender;
                             $password=$encpass;
 							$active=0;
               $email_code =$email_code ;
-							
+
                             $stmt->execute();
 							$result=$stmt->get_result();
                               mail( $email,'verification','http://the-sentence.ga/activate.php?email='.$email.'&email_code='.$email_code,$headers);
