@@ -8,17 +8,29 @@ include "nav.php";
     <div class="welcome-message-container">
         <div class="welcome-message">
             <?php
-            include "connect.php";
-            /* ako si logiran, onda se prikazuje sljedeće: */
-                if(isset($_SESSION['user'])){
-                    echo "<p>Hello, <a class='nav-account' href='account.php'>"
-                                        . $_SESSION['user'] .
-                                    "</a> </p>";
-                          }
-            /* ako nisi logiran, onda se prikazuje ozdravna poruka s login i register: */
-            else {
-                echo"<p>Welcome to The Sentence! For personalised news feed please <a href='login.php' class='boldy'>login</a> or <a href='register.php' class='boldy'>register</a>.</p>";
-            }
+                include "connect.php";
+                /* ako si logiran, onda se prikazuje sljedeće: */
+                    if(isset($_SESSION['user'])){
+                        include "gender.php";
+
+                        if($gender=="male") {
+                            echo "<p>Poštovani ";
+                        }
+                        else if($gender=="female") {
+                            echo "<p>Poštovana ";
+                        }
+                        else {
+                            echo "<p>Poštovani/a, ";
+                        }
+
+                        echo "<a class='nav-account' href='account.php'>"
+                                            . $_SESSION['user'] .
+                                        "</a> </p>";
+                              }
+                /* ako nisi logiran, onda se prikazuje ozdravna poruka s login i register: */
+                else {
+                    echo"<p>Welcome to The Sentence! For personalised news feed please <a href='login.php' class='boldy'>login</a> or <a href='register.php' class='boldy'>register</a>.</p>";
+                }
             ?>
         </div>
     </div>
