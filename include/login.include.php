@@ -3,7 +3,37 @@
 session_start();
 //dodavanje .php dokumenta za spajanje s bazom
 include "../connect.php";
+include "../captcha.php";
+if(isset($_COOKIE['cap'])){
+	$l_count=1;
+}
+if($login_count>0 || $_count>0){
+$captcha;
 
+       if(isset($_POST['g-recaptcha-response'])){
+
+         $captcha=$_POST['g-recaptcha-response'];
+
+       }
+
+       if(!$captcha){
+
+        header ("Location: ../login.php?error=missmatc2");
+
+         exit();
+
+       }
+
+       $secretKey = "6LfM4CMUAAAAAP-yjkiaO-kd7Fahm9t35FZtawZz";
+
+       $ip = $_SERVER['REMOTE_ADDR'];
+
+       $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$captcha."&remoteip=".$ip);
+
+       $responseKeys = json_decode($response,true);
+
+       
+}
 //prikupljanje podataka iz forme
 if(isset($_POST['loginSubmit'])){
 
@@ -36,12 +66,13 @@ $rowNum=$result->num_rows;
 				$hash = password_verify($password,$hpwd);
 
 							if($hash == 0){
-
+							include "../capt.php";
 							header("Location: ../login.php?error=missmatch1");
    							exit ();
 							}
 
 							else{
+								include "../capt1.php";
 								
 					if($remember == 'true'){	
 
@@ -62,17 +93,18 @@ $rowNum=$result->num_rows;
                             $stmt->execute();
 							$result=$stmt->get_result();
 
+							setcookie("cap", "", time() - 3600, "/"); 
 							setcookie("mbid", $member_id, time() + (86400 * 30), "/"); // 86400 = 1 day
 							setcookie("mbto", $member_token, time() + (86400 * 30), "/");
 							$_SESSION['id']= $row['id'];
 							$_SESSION['user']= $row['username'];
-
+					
 							
 							} // 86400 = 1 day
 							
 
 else{
-								
+								setcookie("cap", "", time() - 3600, "/"); 
 							$_SESSION['id']= $row['id'];
 							$_SESSION['user']= $row['username'];
 
@@ -86,6 +118,8 @@ else{
 			
 					}
 		else{
+
+		setcookie("cap", "cap", time() + (86400 * 30), "/"); // 86400 = 1 day
 		header("Location: ../login.php?error=missmatch");
     	exit ();
    			}

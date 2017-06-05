@@ -9,6 +9,7 @@ exit();
       }
 
 ?>
+
 <main>
 
 <!--
@@ -47,6 +48,9 @@ if (strpos($url,'good=act') !== false){
             if (strpos($url,'error=missmatch') !== false){
             echo 'Username or password incorrect!';
             }
+             if (strpos($url,'error=missmatc2') !== false){
+            echo 'Check the captcha!';
+            }
             if (strpos($url,'error=notlogged') !== false){
             echo 'Log in for user area!';
             }
@@ -74,8 +78,16 @@ if (strpos($url,'good=act') !== false){
                 </span>
             </div>
 
+<div style="text-align: center;">
+<?php 
+$url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+     if (strpos($url,'error=missmatch1') !== false or strpos($url,'error=missmatch') !== false or strpos($url,'error=missmatc2') !== false){
+    echo"
+<div class='g-recaptcha' id='google'  data-sitekey='6Le11yMUAAAAAHAylz3elGZpZTQOQaoOre4oedGH'></div>";} 
 
+?></div>
 <!-- ------------------------------------------------ -->
+
             <button name="loginSubmit" type="submit" id="submit-button">Login</button>
 
             <div class="remember-container bordery">
@@ -85,8 +97,9 @@ if (strpos($url,'good=act') !== false){
                 </label>
                 <span class="remember-login-text bordery">Remember me?</span>
             </div>
-
         </form>
+
+
 
         <p class="email-or-social">OR</p>
 

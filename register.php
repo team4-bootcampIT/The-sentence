@@ -102,6 +102,7 @@ exit();
     </main>
 
 
+
     <?php
         include 'footer.php';
     ?>
@@ -172,3 +173,4 @@ errorPlacement: function(error,element){
 
 
 </script>
+

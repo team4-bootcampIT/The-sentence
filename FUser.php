@@ -4,8 +4,8 @@
 class User {
 	private $dbHost     = "localhost";
     private $dbUsername = "root";
-    private $dbPassword = "";
-    private $dbName     = "testbaza_facebook";
+    private $dbPassword = "1234";
+    private $dbName     = "dbaza";
 	private $userTbl    = 'prijava';
 
 	function __construct(){
