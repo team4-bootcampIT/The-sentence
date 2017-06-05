@@ -293,67 +293,79 @@ div.nav-login-container
     color: #444;
 }
 /* --- ARTICLE end */
-@media screen and (min-width: 585px) {
-    #main-nav li {
-        display: inline-block;
-        clear: none;
-        float: left;
-    }
 
-    #main-nav .nav-login-container {
-        float: right;
-    }
 
-    #main-nav ul {
-        display: block;
-        padding-top: 0;
-    }
+/* --------------------------------------------- ARTICLE END -------------------------------------- */
 
-    #menuIcon {
-        display: none;
-    }
+/* ------------------------------------------------ CONTACT ------------------------------------------------ */
 
-    .main-article-container {
-        width: 540px;
-    }
-
-    .article-container {
-        display: inline-block;
-
-        width: 250px;
-        height: 300px;
-        margin: 10px;
-        padding: 10px;
-    }
-
-    .article-image-container {
-        position: relative;
-        height: 140px;
-        width: 230px;
-    }
-
+.person-container {
+    margin: 0 auto;
+    max-width: 810px;
 }
 
-@media screen and (min-width: 680px) {
-    .main-article-container {
-        width: 640px;
-    }
-    .article-container {
-        width: 300px;
-    }
+.made-by {
+    margin: 20px auto 0 auto;
+    text-align: center;
+    font-size: 26px;
+    color: #0161a3;
 }
 
-@media screen and (min-width: 830px) {
-    .main-article-container {
-        width: 810px;
-    }
-    .article-container {
-        width: 250px;
-    }
+.person-responsive {
+    width: 100%;
+    padding: 30px;
+    float: left;
+}
+
+.person {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+    transition: 0.3s;
+    background: #eee;
+}
+
+.person-image {
+    width: 100%;
+}
+
+/* On mouse-over, add a deeper shadow */
+.person:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+}
+
+/* Add some padding inside the card container */
+.person-info {
+    padding: 10px 16px;
+}
+
+.person-info h4 {
+    padding-bottom: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    color: #0161a3;
+}
+
+.person-links {
+    margin: 0 auto 5px auto;
+    width: 80px;
+}
+
+.person-info i {
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+    margin: 0 5px;
+}
+
+.person-info i:hover {
+    color: #0161a3;
 }
 
 
 
+
+/* ------------------------------------------------ CONTACT ------------------------------------------------ */
 
 /* ------------------------------------------------ LOGIN ------------------------------------------------ */
 
@@ -779,17 +791,6 @@ a:link {
 
 /* --------------------------- MY ACCOUNT end ------------------------ */
 
-
-/*
-
-.bordery {
-    border: 1px solid red;
-}
-.borderyx {
-    border: 1px solid blue;
-}
-<<<<<<< .mine
-*/
 .g-recaptcha{
    margin: 15px auto !important;
    width: auto !important;
@@ -799,3 +800,80 @@ a:link {
    text-align: -o-center;
    text-align: -ms-center;
 }
+
+
+/* ------------------------------ RESPONSIVE ------------------------------------ */
+@media screen and (min-width: 585px) {
+    #main-nav li {
+        display: inline-block;
+        clear: none;
+        float: left;
+    }
+
+    #main-nav .nav-login-container {
+        float: right;
+    }
+
+    #main-nav ul {
+        display: block;
+        padding-top: 0;
+    }
+
+    #menuIcon {
+        display: none;
+    }
+
+    .main-article-container {
+        width: 540px;
+    }
+
+    .article-container {
+        display: inline-block;
+
+        width: 250px;
+        height: 300px;
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .article-image-container {
+        position: relative;
+        height: 140px;
+        width: 230px;
+    }
+    .person-responsive {
+        width: 50%;
+    }
+
+}
+
+@media screen and (min-width: 680px) {
+    .main-article-container {
+        width: 640px;
+    }
+    .article-container {
+        width: 300px;
+    }
+}
+
+@media screen and (min-width: 830px) {
+    .main-article-container {
+        width: 810px;
+    }
+    .article-container {
+        width: 250px;
+    }
+}
+
+/* ------------------------------- RESPONSIVE END ----------------------------- */
+
+
+
+.bordery {
+    border: 1px solid red;
+}
+.borderyx {
+    border: 1px solid blue;
+}
+
+*/

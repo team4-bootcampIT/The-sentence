@@ -14,7 +14,7 @@
         <ul id="list-nav">
             <li><a class="nav-link" href="index.php">Home</a></li>
             <li><a class="nav-link" href="#">About</a></li>
-            <li><a class="nav-link" href="#">Contact</a></li>
+            <li><a class="nav-link" href="contact.php">Contact</a></li>
         </ul>
 
         <div class="nav-login-container">
@@ -24,14 +24,14 @@
 
               /* ako si logiran, onda se prikazuje sljedeće: */
                  if(isset($_SESSION['user'])){
-                     echo "<div class='nav-user-wrapper borderyx'>
-                                <span class='nav-account-username bordery'>
+                     echo "<div class='nav-user-wrapper'>
+                                <span class='nav-account-username'>
                                     <a class='nav-account' href='account.php'>"
                                         . $_SESSION['user'] .
                                     "</a>
                                 </span>
-                                <span class='nav-account-icon-wrapper bordery'>
-                                    <a class='nav-account borderyx' href='account.php'>
+                                <span class='nav-account-icon-wrapper'>
+                                    <a class='nav-account' href='account.php'>
                                         <i class='fa fa-user-circle fa-lg nav-account-icon' aria-hidden='true'></i>
                                     </a>
                                 </span>
