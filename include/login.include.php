@@ -32,7 +32,7 @@ $captcha;
 
        $responseKeys = json_decode($response,true);
 
-       
+
 }
 //prikupljanje podataka iz forme
 if(isset($_POST['loginSubmit'])){
@@ -73,10 +73,10 @@ $rowNum=$result->num_rows;
 
 							else{
 								include "../capt1.php";
-								
-					if($remember == 'true'){	
 
-							
+					if($remember == 'true'){
+
+
 
 	                        $member_id= bin2hex(openssl_random_pseudo_bytes(16)); //128-bit
 							$member_token= bin2hex(openssl_random_pseudo_bytes(16)); //128-bit
@@ -93,18 +93,18 @@ $rowNum=$result->num_rows;
                             $stmt->execute();
 							$result=$stmt->get_result();
 
-							setcookie("cap", "", time() - 3600, "/"); 
+							setcookie("cap", "", time() - 3600, "/");
 							setcookie("mbid", $member_id, time() + (86400 * 30), "/"); // 86400 = 1 day
 							setcookie("mbto", $member_token, time() + (86400 * 30), "/");
 							$_SESSION['id']= $row['id'];
 							$_SESSION['user']= $row['username'];
-					
-							
+
+
 							} // 86400 = 1 day
-							
+
 
 else{
-								setcookie("cap", "", time() - 3600, "/"); 
+								setcookie("cap", "", time() - 3600, "/");
 							$_SESSION['id']= $row['id'];
 							$_SESSION['user']= $row['username'];
 
@@ -115,7 +115,7 @@ else{
 							}
 
 						}
-			
+
 					}
 		else{
 

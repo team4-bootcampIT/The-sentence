@@ -20,25 +20,25 @@ include "include/direct.php";
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans|Open+Sans:300,400" rel="stylesheet">
     <script src="https://use.fontawesome.com/f24e56ad22.js"></script>
 	<script src="https://apis.google.com/js/platform.js" async defer></script> <!-- Google platform library -->
-  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
-<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-<script>
-window.addEventListener("load", function(){
-window.cookieconsent.initialise({
-  "palette": {
-    "popup": {
-      "background": "#0161a3"
-    },
-    "button": {
-      "background": "#2196f3"
-    }
-  },
-  "showLink": false,
-  "theme": "classic",
-  "content": {
-    "message": "Korištenjem web stranice pristajete na uporabu kolačića.",
-    "dismiss": "Slažem se!"
-  }
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <script>
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#0161a3"
+        },
+        "button": {
+          "background": "#2196f3"
+        }
+      },
+      "showLink": false,
+      "theme": "classic",
+      "content": {
+        "message": "Korištenjem web stranice pristajete na uporabu kolačića.",
+        "dismiss": "Slažem se!"
+      }
 })});
 </script>
 <script src='https://www.google.com/recaptcha/api.js'></script>
