@@ -1,5 +1,5 @@
 <?php
-
+ob_start();
 include "header.php";
 include "connect.php";
 include "nav.php";
@@ -66,3 +66,4 @@ $result=$stmt->get_result();
         }
     }
      }
+ob_end_clean();
